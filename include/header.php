@@ -5,7 +5,7 @@
     <meta name="author" content="">
     <link rel="icon" href="https://getbootstrap.com/favicon.ico">
 
-    <title>Мой первый сайт</title>
+    <title> <?php echo $title ?> </title>
 
     <!-- Bootstrap core CSS -->
     <link href="./assets/bootstrap.min.css" rel="stylesheet">

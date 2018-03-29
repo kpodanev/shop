@@ -1,17 +1,27 @@
 <?php
 $action = empty($_GET['action']) ? 'home' : $_GET['action'];
 $page = null;
+$title = null;
 switch ($action) {
 	case 'home':
-		$page = './pages/home.php';
+		require_once('./actions/home.php');
 		break;
 	case 'about':
-		$page = './pages/about.php';
+		require_once('./actions/about.php');
 		break;
-    case 'basket':
-        $page = './pages/basket.php';
+    case 'article':
+        require_once('./actions/article.php');
+        break;
+    case 'edit':
+        require_once('./actions/edit.php');
+        break;
+    case 'store':
+        require_once('./actions/store.php');
+        break;
+    case 'cart':
+        require_once('./actions/cart.php');
         break;
 	default:
-		$page = './pages/404.php';
+		$page = './views/404.php';
 		break;
 }
