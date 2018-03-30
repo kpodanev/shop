@@ -1,7 +1,17 @@
 <?php
 require_once('./library/driver.php');
+require_once('./library/fs.php');
+
 $errors = [];
 $article = find($_GET['id']);
+if ($_FILES['img']['size'] != 0) {
+    if ($_FILES['img']['size'] > 61440) {
+        $errors['img'] = 'Допустимый размер файла 60Кб';
+    }
+    if ($_FILES['img']['type'] != 'image/jpeg' && $_FILES['img']['type'] != 'image/png') {
+        $errors['img'] = "Недопустимый формат файлов(необходимо jpeg, png)";
+    }
+}
 
 if (!empty($article)) {
     $articleTitle = $article['title'];
@@ -23,11 +33,11 @@ if(!empty($article)){
 		$article = $_POST;
 		$article['id'] = uniqid();
 		if(save($article)){
-			header("Location: http://web.loc/");
+			header("Location: /index.php?action=home");
 		}
 	}
 }
 
 
 $page = './views/edit.php';
-$title = "Добавление статьи";
+$title = "Редактирование статьи";

@@ -1,4 +1,4 @@
-      <h2 class="mt-5">Добавить новую статью</h2>
+      <h2 class="mt-5">Редактировать статью</h2>
 <div class="row mt-5">
     <div class="col">
         <form method="post" action="index.php?action=edit&id=<?=$article['id']?>">
@@ -19,6 +19,9 @@
             <?php if(empty($errors['content'])): ?>
                 <span><?=$errors['content']?></span>
             <?php endif?>
+        </div>
+        <div class="form-group">
+            <input type="file" name="image" id="image">
         </div>
         <button type="submit" class="btn btn-primary">Сохранить</button>
         <button type="button" class="btn btn-danger">Удалить</button>

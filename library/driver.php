@@ -10,6 +10,9 @@ function _init()
     if(!is_dir(DB_DIR)){
         try{
             mkdir(DB_DIR);
+            if(!file_exists(DB_USERS)){
+                file_put_contents(DB_USERS, '');
+            }
         }catch (\Exception $e){
             throw new \Exception(sprintf("Не удалось создать каталог 'data'. Причина %s.\n Попробуй вручную",
                 $e->getMessage()));
@@ -72,7 +75,6 @@ function findAll()
     try{
         $users = json_decode(file_get_contents(DB_USERS), true);
         return (is_array($users) && count($users) > 0) ? $users : null;
-        return null;
     }catch (\Exception $e){
         return null;
     }
