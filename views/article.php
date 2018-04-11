@@ -21,8 +21,7 @@
             <?php endif?>
         </div>
         <div class="form-group">
-            <label for="file">Choose file to upload</label>
-            <input type="file" id="file" name="file" multiple>
+             <input type="file" id="file" name="file" multiple>
         <button type="submit" class="btn btn-primary">Сохранить</button>
         </form>
     </div>
