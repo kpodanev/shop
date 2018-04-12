@@ -20,9 +20,22 @@
                 <span><?=$errors['content']?></span>
             <?php endif?>
         </div>
-        <div class="form-group">
-             <input type="file" id="file" name="file" multiple>
-        <button type="submit" class="btn btn-primary">Сохранить</button>
+            <div class="form-group">
+                <input type="file" name="image" class="form-control">
+                <small id="contentHelp" class="form-text text-muted">
+                    Размер изображения не должен привышать 2MB. Принимаются файлы jpg, png
+                </small>
+                <?php if(isset($errors['image'])): ?>
+                    <div class="form-control-feedback"><?=$errors['content'];?></div>
+                <?php endif?>
+            </div>
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <button type="button" class="btn btn-danger">Удалить</button>
         </form>
+    </div>
+    <div class="col">
+        <div class="form-group">
+            <img src="/upload/<?=$article['image']?>">
+        </div>
     </div>
 </div>

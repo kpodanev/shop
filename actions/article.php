@@ -21,7 +21,6 @@ if(!empty($_POST)){
         $article['id'] = uniqid();
         $article['image'] = upload($article['id']);
         $article['created_at'] = time();
-        var_dump($article);exit;
         if (save($article)) {
             header("Location: /index.php?action=home");
         }
