@@ -24,7 +24,6 @@ if(!empty($_POST)){
         var_dump($article);exit;
         if (save($article)) {
             header("Location: /index.php?action=home");
-
         }
     }
 }
