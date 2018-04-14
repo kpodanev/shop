@@ -1,3 +1,3 @@
 <?php
-$page = './views/cart.php';
+$page = './views/basket.php';
 $title = "Корзина";

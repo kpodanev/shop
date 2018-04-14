@@ -33,9 +33,4 @@
             <button type="button" class="btn btn-danger">Удалить</button>
         </form>
     </div>
-    <div class="col">
-        <div class="form-group">
-            <img src="/upload/<?=$article['image']?>">
-        </div>
-    </div>
 </div>

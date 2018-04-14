@@ -16,7 +16,7 @@
             </li>
           </ul>
           <form>
-            <button formaction="/index.php?action=basket">Корзина</button>
+            <button class="nav-link" href="/index.php?action=cart">Корзина</button>
           </form>
         </div>
       </nav>
