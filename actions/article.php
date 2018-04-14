@@ -1,7 +1,6 @@
 <?php
-require_once ("./library/fs.php");
+require_once ('./library/fs.php');
 require_once('./library/driver.php');
-require_once('./library/fs.php');
 $article = $_POST;
 $errors = [];
 
@@ -22,11 +21,10 @@ if(!empty($_POST)){
         $article['image'] = upload($article['id']);
         $article['created_at'] = time();
         if (save($article)) {
-            header("Location: /index.php?action=home");
+            header("Location: /");
         }
     }
 }
 
-
-$page = './views/article.php';
 $title = "Добавление статьи";
+render('form', ['article' => $article]);
